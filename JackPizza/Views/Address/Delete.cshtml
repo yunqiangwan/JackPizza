@@ -1,0 +1,88 @@
+﻿@model JackPizza.ViewModels.Address
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SUnitNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUnitNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SStreetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SStreetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSuburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSuburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DUnitNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DUnitNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DStreetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DStreetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DSuburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DSuburb)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

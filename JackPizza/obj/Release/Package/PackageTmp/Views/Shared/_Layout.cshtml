@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Jack'Pizza</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+
+</head>
+<body>
+    <div class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink("JackPizza", "About", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@{Html.RenderAction("CartSummary", "ShoppingCart");}</li>
+                    <li>@Html.ActionLink("new Category", "Create", "Categories")</li>
+                    <li>@Html.ActionLink("New Product", "Create", "Products")</li>
+                    <li>@Html.ActionLink("New Pizza Store", "Create", "PizzaStore")</li>
+                    @*<li>
+                        @if (Request.IsAuthenticated)
+                        {
+                            @Html.ActionLink("Welcome " + User.Identity.Name + "   Logout", "Login", "Accounts")
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Login", "Login", "Accounts")
+                        }
+                    </li>*@
+                </ul>
+                @Html.Partial("_LoginPartial")
+              </div>
+            
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p class="text-center"> Developed By <a href="http://localhost:12982/" target="_new">Yunqiang Wan</a> &copy; @DateTime.Now.Year</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+<script src="~/Content/Js/ResponsiveSlider.js"></script>
+<script type="text/javascript">
+
+    $(".rslides").responsiveSlides({
+        auto: true, // Boolean: Animate automatically, true or false
+        speed: 500 // Integer: Speed of the transition, in milliseconds
+    });
+</script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".RemoveLink").click(function (e) {
+                e.preventDefault();
+            // Get the id from the link
+            var recordToDelete = $(this).attr("data-id");
+            if (recordToDelete != '') {
+                // Perform the ajax post
+                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete },
+                    function (data) {
+                        // Successful requests get here
+                        // Update the page elements
+                        if (data.ItemCount == 0) {
+                            $('#row-' + data.DeleteId).fadeOut('slow');
+                        } else {
+                            $('#item-count-' + data.DeleteId).text(data.ItemCount);
+                        }
+                        $('#cart-total').text(data.CartTotal);
+                        $('#update-message').text(data.Message);
+                        $('#cart-status').text('Cart (' + data.CartCount + ')');
+                    });
+            }
+        });
+    })
+
+    </script>
+
+</body>
+</html>

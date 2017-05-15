@@ -1,0 +1,51 @@
+﻿@model IEnumerable<JackPizza.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageHead)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageBody)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessagePurpose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TargetCustomers)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageHead)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageBody)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessagePurpose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TargetCustomers)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,82 @@
+﻿@model JackPizza.ViewModels.Address
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SUnitNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUnitNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SStreetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SStreetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SSuburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SSuburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DUnitNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DUnitNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DStreetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DStreetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DStreet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DStreet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DSuburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DSuburb)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AddressID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

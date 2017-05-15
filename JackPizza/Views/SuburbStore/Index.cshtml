@@ -1,0 +1,45 @@
+﻿@model IEnumerable<JackPizza.Models.SuburbStore>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.suburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.store)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.postcode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.suburb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.store)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.postcode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.suburbstoreID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.suburbstoreID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.suburbstoreID })
+        </td>
+    </tr>
+}
+
+</table>

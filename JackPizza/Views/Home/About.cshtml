@@ -1,0 +1,28 @@
+﻿<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">Domino’s stores will endeavor to provide allergen-free or gluten free pizzas if requested by the customer but traces of allergens or gluten may be unintentionally present in food due to cross contamination during store operations. We cannot guarantee 100% that our pizzas are allergen or gluten free. Allergen and gluten brochures are available in store and online for information on Domino’s products. Please consider these brochures carefully. Domino’s will not be liable for any costs whatsoever, including medical costs, if a customer has any adverse reaction to a Domino’s product. Please refer to our website for allergen & additive information on our promotional items. </p>
+    <p><a href="https://www.dominos.co.nz/" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Order your Pizza</h2>
+        <p>
+            At Domino's we love to offer our customers pizzas at great value prices and that includes offering fantastic deals with our vouchers and offers. We regularly have special offers for both pick-up and delivery, for piping hot pizzas and tasty sides - even our decadent desserts.
+        </p>
+        @Html.ActionLink("Order", "Index", "Home")
+    </div>
+    <div class="col-md-4">
+        <h2>Delivery</h2>
+        <p>
+            We provide fee service for delivery the nearby place.
+        </p>
+        @Html.ActionLink("Delivery", "Index", "Delivery")
+    </div>
+    <div class="col-md-4">
+        <h2>Pickup</h2>
+        <p>
+            Thank you for your attention and patience.
+        </p>
+        @Html.ActionLink("Pick up", "Create", "SuburbStore")
+    </div></div>
