@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <setParameter name="IIS Web Application Name" value="Default Web Site/" />
-  <setParameter name="DefaultConnection-Web.config Connection String" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\JackPizzaUserDB.mdf;Initial Catalog=JackPizzaUserDB;Integrated Security=True" />
-  <setParameter name="JackPizzaContext-Web.config Connection String" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\JackPizzaDB.mdf;Integrated Security=True;" />
-</parameters>
